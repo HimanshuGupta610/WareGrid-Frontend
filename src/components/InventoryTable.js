@@ -33,7 +33,7 @@ const adminOnly = isAdmin();
 
   useEffect(() => {
   axios
-    .get('https://waregrid-backend.onrender.com/api/inventory', {
+    .get('${process.env.REACT_APP_API_BASE}/api/inventory', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
@@ -75,14 +75,14 @@ const adminOnly = isAdmin();
  const handleStockUpdate = async (updatedProduct) => {
   try {
     // Send stock update to backend
-    await axios.post('https://waregrid-backend.onrender.com/api/update-stock', updatedProduct, {
+    await axios.post('${process.env.REACT_APP_API_BASE}/api/update-stock', updatedProduct, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
     });
 
     // Fetch fresh data from backend to get updated history
-    const res = await axios.get('https://waregrid-backend.onrender.com/api/inventory', {
+    const res = await axios.get('${process.env.REACT_APP_API_BASE}/api/inventory', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
@@ -98,7 +98,7 @@ const adminOnly = isAdmin();
   if (!deleteTarget) return;
 
   try {
-    await axios.delete('https://waregrid-backend.onrender.com/api/delete-product', {
+    await axios.delete('${process.env.REACT_APP_API_BASE}/api/delete-product', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       },
@@ -174,7 +174,7 @@ const adminOnly = isAdmin();
           filename="inventory-export.csv"
           className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
           onClick={() => {
-            axios.post('http://localhost:5000/api/log-export', {}, {
+            axios.post('${process.env.REACT_APP_API_BASE}', {}, {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
               }
@@ -317,7 +317,7 @@ const adminOnly = isAdmin();
         <AddNewProductForm
           onClose={() => setAddingNew(false)}
           onSuccess={() => {
-            axios.get('http://localhost:5000/api/inventory').then(res => {
+            axios.get('${process.env.REACT_APP_API_BASE}/api/inventory').then(res => {
               setData(res.data);
               setFiltered(res.data);
             });
