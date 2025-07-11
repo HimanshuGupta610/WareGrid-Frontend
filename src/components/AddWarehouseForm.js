@@ -19,7 +19,7 @@ const handleSubmit = (e) => {
   }
 
   axios
-    .post('https://waregrid-backend.onrender.com/api/add-warehouse', form, {
+    .post('${process.env.REACT_APP_API_BASE}/api/add-warehouse', form, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
