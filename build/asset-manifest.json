@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.28408b9a.css",
+    "main.js": "/static/js/main.8c88fb83.js",
+    "static/js/453.dd2ccd9c.chunk.js": "/static/js/453.dd2ccd9c.chunk.js",
+    "static/media/waregrid-logo -1.png": "/static/media/waregrid-logo -1.f99f311fbe11a541d1fb.png",
+    "index.html": "/index.html",
+    "main.28408b9a.css.map": "/static/css/main.28408b9a.css.map",
+    "main.8c88fb83.js.map": "/static/js/main.8c88fb83.js.map",
+    "453.dd2ccd9c.chunk.js.map": "/static/js/453.dd2ccd9c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.28408b9a.css",
+    "static/js/main.8c88fb83.js"
+  ]
+}
