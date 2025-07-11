@@ -19,7 +19,7 @@ const WarehouseUtilizationChart = () => {
 
   useEffect(() => {
     axios
-      .get('https://waregrid-backend.onrender.com/api/inventory', {
+      .get('${process.env.REACT_APP_API_BASE}/api/inventory', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
