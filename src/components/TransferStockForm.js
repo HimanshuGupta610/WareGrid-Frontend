@@ -12,7 +12,7 @@ const TransferStockForm = () => {
 
   // 🔃 Fetch products and warehouses
   useEffect(() => {
-    axios.get('https://waregrid-backend.onrender.com/api/inventory', {
+    axios.get('${process.env.REACT_APP_API_BASE}/api/inventory', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
@@ -20,7 +20,7 @@ const TransferStockForm = () => {
       setProducts(res.data);
     });
 
-    axios.get('https://waregrid-backend.onrender.com/api/warehouses', {
+    axios.get('${process.env.REACT_APP_API_BASE}/api/warehouses', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
@@ -44,7 +44,7 @@ const TransferStockForm = () => {
     }
 
     try {
-      await axios.post('https://waregrid-backend.onrender.com/api/transfer-stock', {
+      await axios.post('${process.env.REACT_APP_API_BASE}/api/transfer-stock', {
         productId: selectedProduct,
         fromWarehouseId: fromWarehouse,
         toWarehouseId: toWarehouse,
