@@ -11,7 +11,7 @@ const EditStockForm = ({ product, onUpdate, onClose }) => {
 
     try {
       await axios.post(
-        'https://waregrid-backend.onrender.com/api/update-stock',
+        '${process.env.REACT_APP_API_BASE}/api/update-stock',
         {
           productId: product.productId,
           warehouseId: product.warehouseId,
