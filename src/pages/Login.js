@@ -13,7 +13,7 @@ const Login = () => {
     setError('');
 
     try {
-      const res = await axios.post('https://waregrid-backend.onrender.com/api/login', form);
+      const res = await axios.post('${process.env.REACT_APP_API_BASE}/api/login', form);
       localStorage.setItem('token', res.data.token);
       navigate('/');
     } catch (err) {
