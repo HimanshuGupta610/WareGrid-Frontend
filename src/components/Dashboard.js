@@ -17,7 +17,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchInventory = async () => {
       try {
-        const res = await axios.get('https://waregrid-backend.onrender.com/api/inventory', {
+        const res = await axios.get('${process.env.REACT_APP_API_BASE}/api/inventory', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
           },
