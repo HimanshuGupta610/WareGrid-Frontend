@@ -9,7 +9,7 @@ const AddNewProductForm = ({ onClose, onSuccess }) => {
   const [warehouses, setWarehouses] = useState([]);
 
   useEffect(() => {
-    axios.get('https://waregrid-backend.onrender.com/api/warehouses')
+    axios.get('${process.env.REACT_APP_API_BASE}/api/warehouses')
       .then(res => setWarehouses(res.data));
   }, []);
 
@@ -29,7 +29,7 @@ const AddNewProductForm = ({ onClose, onSuccess }) => {
       maxCapacity: parseInt(formData.maxCapacity),
       expectedDemand: parseInt(formData.expectedDemand),
     };
-    axios.post('https://waregrid-backend.onrender.com/api/add-product', payload, {
+    axios.post('${process.env.REACT_APP_API_BASE}/api/add-product', payload, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
