@@ -12,7 +12,7 @@ const BulkUploadProduct = ({onUploadSuccess}) => {
     formData.append('file', productFile);
 
     try {
-      const res = await axios.post('https://waregrid-backend.onrender.com/api/upload-products', formData, {
+      const res = await axios.post('${process.env.REACT_APP_API_BASE}/api/upload-products', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${localStorage.getItem('token')}`,
