@@ -8,7 +8,7 @@ const ActivityLog = () => {
   const [actionFilter, setActionFilter] = useState('');
 
   useEffect(() => {
-    axios.get('https://waregrid-backend.onrender.com/api/activity-log',{
+    axios.get('${process.env.REACT_APP_API_BASE}/api/activity-log',{
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
